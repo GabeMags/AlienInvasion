@@ -3,6 +3,8 @@ from time import sleep
 import sched
 
 import pygame
+from pygame.locals import *
+from pygame import mixer
 
 from bullet import Bullet
 from alien import Alien, Alien_2, Alien_3
@@ -49,6 +51,9 @@ def fire_bullet(ai_settings, screen, ship, bullets):
     for i in range(1):
         new_bullet = Bullet(ai_settings=ai_settings, screen=screen, ship=ship, yoffset=i* 0.5 * ship.rect.height)
         bullets.add(new_bullet)
+        bullet_sound = pygame.mixer.Channel(0)
+        bullet_sound.play(pygame.mixer.Sound('C:/Users/Gabriel/PycharmProjects/AlienGame/shoot.wav'), maxtime=600)
+        bullet_sound.set_volume(0.2)
         bullets.update
 
 
@@ -147,8 +152,12 @@ def update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets, start_s
 
     if ai_settings.aliens_destroyed == 0:
         ai_settings.aliens_destroyed = ai_settings.aliens_destroyed + 1
-        #pygame.mixer.music.load('sounds/soundtrack.mp3')
-        #pygame.mixer.music.play(-1)
+        pygame.mixer.music.load('C:/Users/Gabriel/PycharmProjects/AlienGame/soundtrack.mp3')
+        pygame.mixer.music.play(-1)
+    elif ai_settings.aliens_destroyed == 15:
+        speed_up = pygame.mixer.music
+        speed_up.load('C:/Users/Gabriel/PycharmProjects/AlienGame/soundtrack_2.mp3')
+        speed_up.play(-1)
 
     if not stats.game_active:
         start_screen.draw_start_screen()
