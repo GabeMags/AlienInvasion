@@ -5,9 +5,32 @@ import sched
 import pygame
 
 from bullet import Bullet
-from alien import Alien
+from alien import Alien, Alien_2, Alien_3
 from UFO import UFO
 from barrier import Barrier
+from high_score_window import HighScoreWindow
+
+def update_high_scores(stats):
+    if stats.score > stats.high_score and stats.score > stats.high_score_2:
+        prev_first = stats.high_score
+        prev_second = stats.high_score_2
+
+        stats.high_score_2 = prev_first
+        stats.high_score_3 = prev_second
+        stats.high_score = stats.score
+
+    elif stats.high_score_2 < stats.score < stats.high_score:
+        temp = stats.high_score_2
+        stats.high_score_2 = stats.score
+        stats.high_score_3 = temp
+
+    elif stats.high_score_3 < stats.score < stats.high_score_2:
+        stats.high_score_3 = stats.score
+
+    hs = open("high_scores.txt", "w")
+    hs.write(str(stats.high_score) + '\n' + str(stats.high_score_2) + '\n' + str(stats.high_score_3))
+    hs.close()
+
 
 def check_keydown_events(event, ai_settings, screen, ship, bullets):
     #respond to keyPRESSES
@@ -63,6 +86,8 @@ def check_play_button(ai_settings, screen, stats, sb, play_button,
     button_clicked = play_button.rect.collidepoint(mouse_x, mouse_y)
     if button_clicked and not stats.game_active:
 
+        stats.game_ends = False
+
         #Reset the game settings.
         ai_settings.initialize_dynamic_settings()
 
@@ -90,20 +115,25 @@ def check_play_button(ai_settings, screen, stats, sb, play_button,
 def check_high_scores_button(ai_settings, screen, stats, mouse_x, mouse_y, high_scores_button):
     """Show the high scores page when the player clicks the high scores button"""
     hs_button_clicked = high_scores_button.rect.collidepoint(mouse_x, mouse_y)
-    if hs_button_clicked and not stats.game_active:
-        print("success")
+    if hs_button_clicked:
+       stats.high_scores_button_clicked = True
+       print("aye")
 
-def open_high_scores():
-    open("high_scores.txt", "w").close()
+   #print(stats.game_active)
+   #if hs_button_clicked and stats.high_scores_button:
+   #   #hs_screen = pygame.display.set_mode((ai_settings.screen_width, ai_settings.screen_height))
+   #   #screen_rect = screen.get_rect()
+   #   #pygame.display.update(screen_rect)
+   #   high_score_window = HighScoreWindow(ai_settings, screen, stats)
+   #   high_score_window.draw_high_score_window()
 
-def create_high_scores_file():
-    open("high_scores.txt", "w").close()
+
 
 def update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets, start_screen, play_button, ufo, barrier, high_scores_button):
     screen.fill(ai_settings.bg_color)
     """Update images on the screen and flip to the new screen."""
 
-    #redraw all bullets behind ship and aliens
+    # Redraw all bullets behind ship and aliens
     for bullet in bullets.sprites():
         bullet.draw_bullet()
 
@@ -112,19 +142,41 @@ def update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets, start_s
     barrier.blitme()
     ufo.blitme()
 
-
-    #Draw the score information
+    # Draw the score information
     sb.show_score()
 
-    #Draw the play button, high scores button and start screen if the game is inactive
+    if ai_settings.aliens_destroyed == 0:
+        ai_settings.aliens_destroyed = ai_settings.aliens_destroyed + 1
+        #pygame.mixer.music.load('sounds/soundtrack.mp3')
+        #pygame.mixer.music.play(-1)
+
     if not stats.game_active:
         start_screen.draw_start_screen()
         start_screen.draw_title_aliens()
+
         play_button.draw_button()
         high_scores_button.draw_hs_button()
 
+    if stats.game_ends:
+        end_screen = pygame.display.set_mode((ai_settings.screen_width, ai_settings.screen_height))
+        screen_rect = end_screen.get_rect()
+        play_button.draw_button()
+        high_scores_button.draw_hs_button()
+        pygame.display.update(screen_rect)
 
-    #Make the most recently drawn screen visible
+    # Draw the play button, high scores button and start screen if the game is inactive
+    if stats.first_playthrough:
+        print(stats.first_playthrough)
+
+    print(stats.game_active)
+    if stats.high_scores_button_clicked:
+        # hs_screen = pygame.display.set_mode((ai_settings.screen_width, ai_settings.screen_height))
+        # screen_rect = screen.get_rect()
+        # pygame.display.update(screen_rect)
+        high_score_window = HighScoreWindow(ai_settings, screen, stats)
+        high_score_window.draw_high_score_window(stats)
+
+    # Make the most recently drawn screen visible
     pygame.display.flip()
 
 
@@ -147,9 +199,12 @@ def check_bullet_alien_collisions(ai_settings, screen, stats, sb, ship, aliens, 
 
     if collisions:
         for aliens in collisions.values():
+            ai_settings.aliens_destroyed += 1
             stats.score += ai_settings.alien1_points * len(aliens)
             sb.prep_score()
+
         check_high_score(stats, sb, ai_settings, high_score_window)
+        update_high_scores(stats)
 
     if len(aliens) == 0:
         #If the entire fleet is destroyed, start a new level
@@ -184,6 +239,23 @@ def create_alien(ai_settings, screen, aliens, alien_number, row_number):
     alien.rect.y = alien.rect.height + 1 * alien.rect.height * row_number
     aliens.add(alien)
 
+def create_alien_2(ai_settings, screen, aliens, alien_number, row_number):
+    #create an alien and place it in the row
+    alien = Alien_2(ai_settings, screen)
+    alien_width = alien.rect.width
+    alien.x = alien_width + 1 * alien_width * alien_number
+    alien.rect.x = alien.x
+    alien.rect.y = alien.rect.height + 1 * alien.rect.height * row_number
+    aliens.add(alien)
+
+def create_alien_3(ai_settings, screen, aliens, alien_number, row_number):
+    #create an alien and place it in the row
+    alien = Alien_3(ai_settings, screen)
+    alien_width = alien.rect.width
+    alien.x = alien_width + 1 * alien_width * alien_number
+    alien.rect.x = alien.x
+    alien.rect.y = alien.rect.height + 1 * alien.rect.height * row_number
+    aliens.add(alien)
 
 def create_fleet(ai_settings, screen, ship, aliens):
     #create a full fleet of aliens.
@@ -197,7 +269,12 @@ def create_fleet(ai_settings, screen, ship, aliens):
     for row_number in range(number_rows):
         for alien_number in range(number_aliens_x):
             create_alien(ai_settings, screen, aliens, alien_number,
-                         row_number)
+                         1)
+            create_alien_2(ai_settings, screen, aliens, alien_number,
+                         2)
+            create_alien_3(ai_settings, screen, aliens, alien_number,
+                         3)
+
 
 def check_fleet_edges(ai_settings, aliens):
     #respond appropriately if any aliens have reached an edge
@@ -262,6 +339,7 @@ def ship_hit(ai_settings, screen, stats, sb, ship, aliens, bullets, high_score_w
         check_high_score(stats, sb, ai_settings, high_score_window)
         stats.game_active = False
         first_playthrough = True
+        stats.game_ends = True
 
 
 def check_high_score(stats, sb, ai_settings, high_score_window):
@@ -270,8 +348,6 @@ def check_high_score(stats, sb, ai_settings, high_score_window):
         stats.high_score = stats.score
         sb.prep_high_score
         high_score_window.draw_high_score_window()
-
-
 
 
 

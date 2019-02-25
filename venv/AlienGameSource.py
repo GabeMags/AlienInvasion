@@ -22,9 +22,6 @@ def run_game():
 
     pygame.display.set_caption("Alien Invasion!")
 
-    #Keep track of whether or not the game has run for the first time already
-    first_playthrough = False
-
     # Make the play button and high scores button
     play_button = Button(ai_settings, screen, "Play!")
     high_scores_button = HighScoresButton(ai_settings, screen, "High Scores")
@@ -39,18 +36,20 @@ def run_game():
     aliens = Group()
     barrier = Barrier(ai_settings, screen)
     ufo = UFO(ai_settings, screen)
+    hs_init = open("high_scores.txt", "r+")
+    stats.high_score = int(hs_init.readline())
+    stats.high_score_2 = int(hs_init.readline())
+    stats.high_score_3 = int(hs_init.readline())
+    hs_init.close()
 
     # Make the start screen
     start_screen = StartScreen(ai_settings, screen, aliens, "Alien Invasion!", "= 50", "= 100", "= 150", "= 300", "Gabriel Magallanes | For CPSC 386 (Video Game Design) | Cal State Fullerton | 2019")
 
     # Make the high score window
-    high_score_window = HighScoreWindow(ai_settings, screen, stats, sb)
+    high_score_window = HighScoreWindow(ai_settings, screen, stats)
 
     # Create the fleet of aliens
     gf.create_fleet(ai_settings, screen, ship, aliens)
-
-    # Create the high scores file to store high scores
-    #gf.create_high_scores_file()
 
     # Create a way to keep track of time (for the ufo spawn)
     time_elapsed = 0
@@ -61,18 +60,14 @@ def run_game():
 
         gf.check_events(ai_settings, screen, stats, sb, play_button, ship, aliens, bullets, high_scores_button)
 
-
         if stats.game_active:
             ship.update()
             gf.update_ufo(ai_settings, screen, ufo)
             gf.update_bullets(ai_settings, screen, stats, sb, ship, aliens, bullets, high_score_window)
             gf.update_aliens(ai_settings, screen, stats, sb, ship, aliens, bullets, high_score_window)
 
-
         gf.update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets, start_screen, play_button, ufo, barrier, high_scores_button)
 
-        if first_playthrough is True:
-            high_score_window.draw_high_score_window()
 
 
 run_game()
