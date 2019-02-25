@@ -17,6 +17,7 @@ class Alien(Sprite):
         self.images.append(self.image.image_at((640, 0, 64, 64), colorkey=(0, 0, 0, 1)))
         self.images.append(self.image.image_at((704, 0, 64, 64), colorkey=(0, 0, 0, 1)))
         self.image = self.images[self.index]
+        self.score = 10
 
         #load the alien image and set its rect attribute
         self.rect = self.image.get_rect()
@@ -63,6 +64,7 @@ class Alien_2(Sprite):
         self.index = 0
         self.images.append(self.image.image_at((64, 0, 64, 64), colorkey=(0, 0, 0, 1)))
         self.images.append(self.image.image_at((128, 0, 64, 64), colorkey=(0, 0, 0, 1)))
+        self.score = 20
 
         self.image = self.images[self.index]
 
@@ -112,6 +114,7 @@ class Alien_3(Sprite):
         self.images.append(self.image.image_at((192, 0, 64, 64), colorkey=(0, 0, 0, 1)))
         self.images.append(self.image.image_at((256, 0, 64, 64), colorkey=(0, 0, 0, 1)))
         self.image = self.images[self.index]
+        self.score = 30
 
         #load the alien image and set its rect attribute
         self.rect = self.image.get_rect()

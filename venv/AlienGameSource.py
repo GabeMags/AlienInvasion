@@ -69,5 +69,4 @@ def run_game():
         gf.update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets, start_screen, play_button, ufo, barrier, high_scores_button)
 
 
-
 run_game()

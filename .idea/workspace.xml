@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="be608d00-071a-497c-acf0-bf5e016700ce" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/AlienGameSource.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/AlienGameSource.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/alien.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/alien.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/game_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/game_functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/sounds/soundtrack.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/sounds/space_1.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/venv/space_1.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/scoreboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/scoreboard.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.7958848">
+    <splitter split-orientation="horizontal" split-proportion="0.4970258">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -30,8 +30,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/venv/start_screen.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="221">
-                  <caret line="13" column="56" selection-start-line="13" selection-start-column="56" selection-end-line="13" selection-end-column="56" />
+                <state>
+                  <caret line="43" column="14" lean-forward="true" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
                 </state>
               </provider>
             </entry>
@@ -39,8 +39,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/venv/alien.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2091">
-                  <caret line="126" column="47" selection-start-line="126" selection-start-column="47" selection-end-line="126" selection-end-column="47" />
+                <state relative-caret-position="93">
+                  <caret line="122" column="37" lean-forward="true" selection-start-line="122" selection-start-column="37" selection-end-line="122" selection-end-column="37" />
                   <folding>
                     <element signature="e#0#13#0" expanded="true" />
                   </folding>
@@ -51,8 +51,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/venv/settings.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="333">
-                  <caret line="60" column="13" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="13" />
+                <state relative-caret-position="102">
+                  <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
                 </state>
               </provider>
             </entry>
@@ -61,7 +61,7 @@
             <entry file="file://$PROJECT_DIR$/venv/high_scores.txt">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="34">
-                  <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+                  <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
                 </state>
               </provider>
             </entry>
@@ -93,8 +93,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/venv/game_functions.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="204">
-                  <caret line="84" column="40" lean-forward="true" selection-start-line="84" selection-start-column="40" selection-end-line="84" selection-end-column="40" />
+                <state relative-caret-position="212">
+                  <caret line="122" lean-forward="true" selection-start-line="122" selection-end-line="122" />
                   <folding>
                     <element signature="e#0#10#0" expanded="true" />
                   </folding>
@@ -114,8 +114,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/venv/AlienGameSource.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="68" selection-start-line="68" selection-end-line="68" />
+                <state relative-caret-position="144">
+                  <caret line="47" column="14" lean-forward="true" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
                   <folding>
                     <element signature="e#0#13#0" expanded="true" />
                   </folding>
@@ -126,7 +126,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/venv/high_score_window.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="204">
+                <state relative-caret-position="181">
                   <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
                 </state>
               </provider>
@@ -165,8 +165,11 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/venv/scoreboard.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret column="18" selection-start-column="18" selection-end-column="18" />
+                <state relative-caret-position="918">
+                  <caret line="54" column="58" selection-start-line="54" selection-start-column="58" selection-end-line="54" selection-end-column="58" />
+                  <folding>
+                    <element signature="e#0#18#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -174,8 +177,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/venv/game_stats.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="102">
-                  <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+                <state relative-caret-position="408">
+                  <caret line="24" column="22" lean-forward="true" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
                 </state>
               </provider>
             </entry>
@@ -198,6 +201,9 @@
       <find>ship_hit</find>
       <find>print</find>
       <find>fire</find>
+      <find>check_bull</find>
+      <find>stats.score</find>
+      <find>update_bullets</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\Gabriel\PycharmProjects\AlienGame</dir>
@@ -215,19 +221,19 @@
         <option value="$PROJECT_DIR$/venv/alien2.py" />
         <option value="$PROJECT_DIR$/venv/UFO.py" />
         <option value="$PROJECT_DIR$/venv/ship.py" />
-        <option value="$PROJECT_DIR$/venv/scoreboard.py" />
         <option value="$PROJECT_DIR$/venv/barrier.py" />
         <option value="$PROJECT_DIR$/venv/button.py" />
         <option value="$PROJECT_DIR$/venv/high_scores_button.py" />
         <option value="$PROJECT_DIR$/venv/enter_high_score.py" />
         <option value="$PROJECT_DIR$/venv/spritesheet.py" />
-        <option value="$PROJECT_DIR$/venv/alien.py" />
         <option value="$PROJECT_DIR$/venv/game_stats.py" />
-        <option value="$PROJECT_DIR$/venv/AlienGameSource.py" />
         <option value="$PROJECT_DIR$/venv/start_screen.py" />
         <option value="$PROJECT_DIR$/venv/high_score_window.py" />
         <option value="$PROJECT_DIR$/venv/sounds/space_1.mp3" />
         <option value="$PROJECT_DIR$/venv/settings.py" />
+        <option value="$PROJECT_DIR$/venv/alien.py" />
+        <option value="$PROJECT_DIR$/venv/scoreboard.py" />
+        <option value="$PROJECT_DIR$/venv/AlienGameSource.py" />
         <option value="$PROJECT_DIR$/venv/game_functions.py" />
       </list>
     </option>
@@ -398,10 +404,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.AlienGameSource" />
+        <item itemvalue="Python.game_functions" />
         <item itemvalue="Python.high_score_window" />
         <item itemvalue="Python.game_stats" />
         <item itemvalue="Python.bullet" />
-        <item itemvalue="Python.game_functions" />
       </list>
     </recent_temporary>
   </component>
@@ -430,19 +436,26 @@
       <option name="project" value="LOCAL" />
       <updated>1551082132893</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fixed music. added shooting sounds.">
+      <created>1551084589382</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1551084589382</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="23" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19695969" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11434237" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49966952" visible="true" weight="0.27793297" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49966952" visible="true" weight="0.30307263" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -478,7 +491,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added more functions including animations for aliens, made high scores save locally" />
     <MESSAGE value="Added spritesheet and sound files (including high scores file)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added spritesheet and sound files (including high scores file)" />
+    <MESSAGE value="fixed music. added shooting sounds." />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed music. added shooting sounds." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/.PyCharmCE2018.3/system/python_stubs/735610/builtins.py">
@@ -537,43 +551,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/alien.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2091">
-          <caret line="126" column="47" selection-start-line="126" selection-start-column="47" selection-end-line="126" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/ship.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/bullet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/high_score_window.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/high_scores_button.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -598,60 +575,100 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/scoreboard.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="18" selection-start-column="18" selection-end-column="18" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/venv/space_1.mp3">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/game_stats.py">
+    <entry file="file://$PROJECT_DIR$/venv/bullet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/high_scores.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/AlienGameSource.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="68" selection-start-line="68" selection-end-line="68" />
+        <state relative-caret-position="187">
+          <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/space_1.mp3">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/settings.py">
+    <entry file="file://$PROJECT_DIR$/venv/ship.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="60" column="13" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="13" />
+        <state relative-caret-position="289">
+          <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/start_screen.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="56" selection-start-line="13" selection-start-column="56" selection-end-line="13" selection-end-column="56" />
+        <state>
+          <caret line="43" column="14" lean-forward="true" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/game_stats.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="22" lean-forward="true" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/high_scores.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/alien.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="122" column="37" lean-forward="true" selection-start-line="122" selection-start-column="37" selection-end-line="122" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/scoreboard.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="54" column="58" selection-start-line="54" selection-start-column="58" selection-end-line="54" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/game_functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="84" column="40" lean-forward="true" selection-start-line="84" selection-start-column="40" selection-end-line="84" selection-end-column="40" />
+        <state relative-caret-position="212">
+          <caret line="122" lean-forward="true" selection-start-line="122" selection-end-line="122" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/high_score_window.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/AlienGameSource.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="47" column="14" lean-forward="true" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -11,6 +11,7 @@ from alien import Alien, Alien_2, Alien_3
 from UFO import UFO
 from barrier import Barrier
 from high_score_window import HighScoreWindow
+import math
 
 def update_high_scores(stats):
     if stats.score > stats.high_score and stats.score > stats.high_score_2:
@@ -33,7 +34,6 @@ def update_high_scores(stats):
     hs.write(str(stats.high_score) + '\n' + str(stats.high_score_2) + '\n' + str(stats.high_score_3))
     hs.close()
 
-
 def check_keydown_events(event, ai_settings, screen, ship, bullets):
     #respond to keyPRESSES
     if event.key == pygame.K_RIGHT:
@@ -45,7 +45,6 @@ def check_keydown_events(event, ai_settings, screen, ship, bullets):
     elif event.key == pygame.K_q:
         sys.exit()
 
-
 def fire_bullet(ai_settings, screen, ship, bullets):
     # create a new bullet and add it to the bullets group. also check for how many bullets the player should have
     for i in range(1):
@@ -55,7 +54,6 @@ def fire_bullet(ai_settings, screen, ship, bullets):
         bullet_sound.play(pygame.mixer.Sound('C:/Users/Gabriel/PycharmProjects/AlienGame/shoot.wav'), maxtime=600)
         bullet_sound.set_volume(0.2)
         bullets.update
-
 
 def check_keyup_events(event, ship):
     #respond to key RELEASES
@@ -122,17 +120,6 @@ def check_high_scores_button(ai_settings, screen, stats, mouse_x, mouse_y, high_
     hs_button_clicked = high_scores_button.rect.collidepoint(mouse_x, mouse_y)
     if hs_button_clicked:
        stats.high_scores_button_clicked = True
-       print("aye")
-
-   #print(stats.game_active)
-   #if hs_button_clicked and stats.high_scores_button:
-   #   #hs_screen = pygame.display.set_mode((ai_settings.screen_width, ai_settings.screen_height))
-   #   #screen_rect = screen.get_rect()
-   #   #pygame.display.update(screen_rect)
-   #   high_score_window = HighScoreWindow(ai_settings, screen, stats)
-   #   high_score_window.draw_high_score_window()
-
-
 
 def update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets, start_screen, play_button, ufo, barrier, high_scores_button):
     screen.fill(ai_settings.bg_color)
@@ -174,10 +161,7 @@ def update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets, start_s
         pygame.display.update(screen_rect)
 
     # Draw the play button, high scores button and start screen if the game is inactive
-    if stats.first_playthrough:
-        print(stats.first_playthrough)
 
-    print(stats.game_active)
     if stats.high_scores_button_clicked:
         # hs_screen = pygame.display.set_mode((ai_settings.screen_width, ai_settings.screen_height))
         # screen_rect = screen.get_rect()
@@ -208,9 +192,13 @@ def check_bullet_alien_collisions(ai_settings, screen, stats, sb, ship, aliens, 
 
     if collisions:
         for aliens in collisions.values():
-            ai_settings.aliens_destroyed += 1
-            stats.score += ai_settings.alien1_points * len(aliens)
-            sb.prep_score()
+            for x in aliens:
+                print(x.score)
+                print("stats" , int(math.ceil((stats.score/3) / 10.0)) * x.score)
+                ai_settings.aliens_destroyed += 1
+                stats.score += x.score
+                sb.prep_score()
+
 
         check_high_score(stats, sb, ai_settings, high_score_window)
         update_high_scores(stats)
@@ -284,7 +272,6 @@ def create_fleet(ai_settings, screen, ship, aliens):
             create_alien_3(ai_settings, screen, aliens, alien_number,
                          3)
 
-
 def check_fleet_edges(ai_settings, aliens):
     #respond appropriately if any aliens have reached an edge
     for alien in aliens.sprites():
@@ -350,7 +337,6 @@ def ship_hit(ai_settings, screen, stats, sb, ship, aliens, bullets, high_score_w
         first_playthrough = True
         stats.game_ends = True
 
-
 def check_high_score(stats, sb, ai_settings, high_score_window):
     """Check to see if there's a new high score"""
     if stats.score > stats.high_score:
@@ -358,14 +344,11 @@ def check_high_score(stats, sb, ai_settings, high_score_window):
         sb.prep_high_score
         high_score_window.draw_high_score_window()
 
-
-
 def update_ufo(ai_settings, screen, ufo):
     """Update the position of the ufo"""
     #update ufo position
     check_ufo_edges(ai_settings, ufo)
     ufo.update()
-
 
 def check_ufo_edges(ai_settings, ufo):
     if ufo.check_edges():
@@ -376,8 +359,3 @@ def change_ufo_direction(ai_settings, ufo):
     if now - ai_settings.last >= ai_settings.cooldown:
         ai_settings.last = now
         ai_settings.ufo_direction *= -1
-
-
-
-
-
